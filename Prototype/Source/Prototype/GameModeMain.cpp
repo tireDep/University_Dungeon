@@ -3,3 +3,22 @@
 
 #include "GameModeMain.h"
 
+AGameModeMain::AGameModeMain()
+{
+
+}
+
+void AGameModeMain::BeginPlay()
+{
+	Super::BeginPlay();
+
+	if (GameManager == nullptr)
+	{
+		GameManager = GetWorld()->SpawnActor<AGameManager>(AGameManager::StaticClass());
+	}
+
+	if (GameManager != nullptr)
+	{
+		GameManager->StartGame();
+	}
+}
