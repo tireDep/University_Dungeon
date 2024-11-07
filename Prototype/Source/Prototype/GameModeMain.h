@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
 #include "GameManager.h"
+#include "UIManager.h"
 #include "GameModeMain.generated.h"
 
 UCLASS()
@@ -19,5 +20,9 @@ protected:
 	virtual void BeginPlay() override;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Managers") AGameManager* GameManager;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Managers") AUIManager* UIManager;
+
+private:
+	void CreateManager();
 	
 };

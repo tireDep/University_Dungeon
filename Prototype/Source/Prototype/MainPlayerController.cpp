@@ -8,12 +8,12 @@ void AMainPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
 
-	UUserWidget* MainScreen = CreateWidget(this, MainScreenClass);
-	if (MainScreen == nullptr)
-	{
-		// error
-		return;
-	}
-
-	MainScreen->AddToViewport();
+	// UUserWidget* MainScreen = CreateWidget(this, MainScreenClass);
+	// if (MainScreen == nullptr)
+	// {
+	// 	// error
+	// 	return;
+	// }
+	// 
+	// MainScreen->AddToViewport();
 }
