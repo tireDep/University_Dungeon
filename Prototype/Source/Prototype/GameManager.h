@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
-#include "BaseManager.h"
 #include "GameManager.generated.h"
 
 UCLASS()
@@ -25,6 +24,4 @@ public:
 
 private:
 	bool IsGameActive;
-
-	TArray<ABaseManager*> Managers;
 };

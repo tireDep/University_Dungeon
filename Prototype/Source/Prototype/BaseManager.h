@@ -3,23 +3,15 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
+#include "UObject/NoExportTypes.h"
 #include "BaseManager.generated.h"
 
-UCLASS()
-class PROTOTYPE_API ABaseManager : public AActor
+UCLASS(Abstract)
+class PROTOTYPE_API UBaseManager : public UObject
 {
 	GENERATED_BODY()
 
 public:
-	ABaseManager();
-
-protected:
-	virtual void BeginPlay() override;
-
-public:
-	virtual void Tick(float DeltaTime) override;
-
-	virtual void Initialize() {};
-	virtual void ShutDown() {};
+	virtual void InitializeManager() PURE_VIRTUAL(UBaseManager::InitializeManager);
+	virtual void ShutDownManager() PURE_VIRTUAL(UBaseManager::ShutDownManager);
 };

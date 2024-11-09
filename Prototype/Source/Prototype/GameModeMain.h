@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
-// #include "GameManager.h"
 #include "GameModeMain.generated.h"
 
 UCLASS()
@@ -17,8 +16,5 @@ public:
 
 protected:
 	virtual void BeginPlay() override;
-
-private:
-	void CreateManager();
 	
 };

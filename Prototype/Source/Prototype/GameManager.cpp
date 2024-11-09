@@ -1,20 +1,10 @@
 #include "GameManager.h"
-#include "UIManager.h"
 
 AGameManager::AGameManager()
 {
 	PrimaryActorTick.bCanEverTick = true;
 
 	IsGameActive = false;
-
-	if (GetWorld())
-	{
-		AUIManager* UIManager = GetWorld()->SpawnActor<AUIManager>(AUIManager::StaticClass());
-		if (UIManager)
-		{
-			Managers.Add(UIManager);
-		}
-	}
 }
 
 void AGameManager::BeginPlay()

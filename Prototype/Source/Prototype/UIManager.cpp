@@ -1,28 +1,19 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "UIManager.h"
 #include "Blueprint/UserWidget.h"
 
-
-AUIManager::AUIManager()
+UUIManager::UUIManager()
 {
-	PrimaryActorTick.bCanEverTick = false;
+
 }
 
-void AUIManager::BeginPlay()
+void UUIManager::InitializeManager()
 {
-	Super::BeginPlay();
+	Super::InitializeManager();
 }
 
-void AUIManager::Initialize()
+void UUIManager::ShutDownManager()
 {
-	Super::Initialize();
-}
-
-void AUIManager::ShutDown()
-{
-	Super::ShutDown();
+	Super::ShutDownManager();
 
 	for (auto& content : UIWidgets)
 	{
@@ -36,9 +27,9 @@ void AUIManager::ShutDown()
 	UIWidgets.Empty();
 }
 
-UUserWidget* AUIManager::GetWidget(EUIType UIType)
+UUserWidget* UUIManager::GetWidget(EUIType UIType)
 {
-	if( UIWidgets.Contains(UIType) )
+	if (UIWidgets.Contains(UIType))
 	{
 		return UIWidgets[UIType];
 	}
@@ -46,7 +37,7 @@ UUserWidget* AUIManager::GetWidget(EUIType UIType)
 	return nullptr;
 }
 
-void AUIManager::CreateNewWidget(EUIType UIType, TSubclassOf<UUserWidget> WidgetClass, bool bHide/* = true*/)
+void UUIManager::CreateNewWidget(EUIType UIType, TSubclassOf<UUserWidget> WidgetClass, bool bHide/* = true*/)
 {
 	if (WidgetClass == nullptr)
 	{
@@ -80,9 +71,9 @@ void AUIManager::CreateNewWidget(EUIType UIType, TSubclassOf<UUserWidget> Widget
 	}
 }
 
-void AUIManager::RemoveWidget(EUIType UIType)
+void UUIManager::RemoveWidget(EUIType UIType)
 {
-	if (UIWidgets.Contains(UIType) == false )
+	if (UIWidgets.Contains(UIType) == false)
 	{
 		return;
 	}
@@ -96,7 +87,7 @@ void AUIManager::RemoveWidget(EUIType UIType)
 	UIWidgets.Remove(UIType);
 }
 
-void AUIManager::SetHideWidget(EUIType UIType, bool bHide)
+void UUIManager::SetHideWidget(EUIType UIType, bool bHide)
 {
 	if (UIWidgets.Contains(UIType) == true)
 	{
@@ -119,4 +110,3 @@ void AUIManager::SetHideWidget(EUIType UIType, bool bHide)
 		Widget->SetVisibility(ESlateVisibility::Visible);
 	}
 }
-
