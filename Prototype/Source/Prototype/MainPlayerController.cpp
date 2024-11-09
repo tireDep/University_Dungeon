@@ -16,4 +16,5 @@ void AMainPlayerController::BeginPlay()
 	// }
 	// 
 	// MainScreen->AddToViewport();
+	// getgamemode
 }

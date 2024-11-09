@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
+#include "UIManager.h"
 #include "MainPlayerController.generated.h"
 
 /**
